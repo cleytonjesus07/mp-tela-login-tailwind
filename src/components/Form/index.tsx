@@ -10,12 +10,8 @@ export default function Form({setData}:{setData:React.Dispatch<React.SetStateAct
       }
         e.preventDefault();
         const form = new FormData(e.currentTarget);
-        const {email,password,name} = Object.fromEntries(form) as {email:string,password:string,name:string};
-        (!email && !password && !name) ? alert("Você deve preencher todos os campos!") : 
-        (!email && !password) ? alert("Você deve preencher os campos de Email e Senha!") : 
-        (!email && !name) ? alert("Você deve preencher os campos de Email e Nome!") : 
-        (!password && !name) ? alert("Você deve preencher os campos de Senha e Nome!") : 
-        (!name) ? alert("Você deve preencher o campo de Nome!") : 
+        const {email,password} = Object.fromEntries(form) as {email:string,password:string,name:string};
+        (!email && !password ) ? alert("Você deve preencher todos os campos!") : 
         (!password) ? alert("Você deve preencher o campo de Senha!") : 
         (!email) ? alert("Você deve preencher o campo de Email!") : redirectToHome()
       }
@@ -29,10 +25,6 @@ export default function Form({setData}:{setData:React.Dispatch<React.SetStateAct
           <span className='block w-2 h-2 border rounded-full animate-bounce'></span>
         </div>
         <form onSubmit={handleSubmit} className='space-y-5 [&>div>input]:text-xs [&>div>label]:text-xs [&>div>label]:mb-1 [&>div>input]:py-1 [&>div>input]:px-1 form'>
-        <div className='flex flex-col'>
-            <label htmlFor='name' className='text-gray-400'>Nome</label>
-            <input className='bg-transparent border-b outline-none' name='name' id='name' type="text" />
-          </div>
           <div className='flex flex-col'>
             <label htmlFor='email' className='text-gray-400'>Email</label>
             <input className='bg-transparent border-b outline-none' name='email' id='email' type="email" />
