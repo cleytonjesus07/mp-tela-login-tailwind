@@ -1,32 +1,30 @@
-# [💻 A tela de login mais bonita do mundo com Tailwind CSS](https://codante.io/mini-projetos/mp-tela-login-tailwind)
+# React + TypeScript + Vite
 
-Você foi contratado por uma empresa de desenvolvimento de software para criar a tela de login mais bonita do mundo usando o framework Tailwind CSS. A empresa deseja proporcionar uma experiência visualmente agradável aos usuários ao fazerem login em seus sistemas.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🔨 Requisitos
-- Crie uma tela de login responsiva, que se adapte a diferentes tamanhos de tela.
-- Utilize o framework Tailwind CSS para estilizar os elementos da tela de login.
-- A tela de login deve conter os seguintes elementos:
-  - Campo de entrada para o nome de usuário.
-  - Campo de entrada para a senha.
-  - Botão "Entrar" para fazer o login.
-- Implemente a validação dos campos de entrada. Caso algum campo esteja vazio, exiba uma mensagem de erro.
-- Após o usuário fazer o login com sucesso, redirecione-o para uma página de boas-vindas.
-- Capriche no design! Use sua criatividade para criar uma interface atraente e amigável, aproveitando os recursos oferecidos pelo Tailwind CSS.
+Currently, two official plugins are available:
 
-## 🔍 Dicas
-- Considere adicionar transições e animações suaves para tornar a experiência do usuário mais agradável.
-- Teste seu design em diferentes dispositivos e navegadores para garantir que ele seja responsivo e funcional em todos eles.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🎨 Design sugerido
-🔗 [Acesse o link do Figma](https://www.figma.com/file/suvmja6210ggZOO6Cpehjl/Mini-Projeto---A-tela-de-login-mais-bonita-do-mundo?type=design&node-id=0%3A1&t=pnT8xEiypSKTO4Z7-1)
+## Expanding the ESLint configuration
 
-![image](https://github.com/codante-io/mp-tela-login-tailwind/assets/6475893/914bc33a-ed2a-4720-bf3a-f2c2d9eb41a8)
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
+- Configure the top-level `parserOptions` property like this:
 
-## 📝 Mockups
-![Screenshot_2023-05-06_134731-removebg-preview](https://user-images.githubusercontent.com/6475893/236636789-b03715d5-7010-4e46-af97-b4a901d0fe63.png)
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-## 💡 Inspiração
-- https://dribbble.com/shots/5792716-Login-page
-- https://dribbble.com/shots/3546598-Sign-In
-- https://www.youtube.com/watch?v=t-EMinSz_Tk
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
